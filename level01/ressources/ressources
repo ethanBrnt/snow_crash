@@ -1,0 +1,9 @@
+cat /etc/passwd
+
+mdp hash pour flag01
+
+mdp dans test
+
+john test
+
+cat  ~/.john/john.pot pour afficher les mdp recuperer par john

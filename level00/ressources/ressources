@@ -1,0 +1,9 @@
+find sur flag00 (find / -type f -user flag00 2>/dev/null)
+
+les seulent fichiers a part avec un nom propre
+
+recherche web du contenue des fichiers donner par find 
+
+proposition du code cesar dcode.fr
+
+nottoohardhere
