@@ -1,0 +1,13 @@
+login avec flag00
+
+cat /etc/passwd
+> flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+mdp hash pour flag01 42hDRfypTqqnw
+
+mettre le mdp dans mdp.txt (hors vm)
+
+john mdp.txt
+
+cat  ~/.john/john.pot pour afficher les mdp recuperer par john
+
+abcdefg
