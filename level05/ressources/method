@@ -1,0 +1,18 @@
+level05@192.168.1.42's password:
+You have new mail.
+level05@SnowCrash:~$ cat /var/mail/level05
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+level05@SnowCrash:~$ cat /usr/sbin/openarenaserver
+#!/bin/sh
+
+for i in /opt/openarenaserver/* ; do
+        (ulimit -t 5; bash -x "$i")
+        rm -f "$i"
+done
+level05@SnowCrash:~$
+
+level05@SnowCrash:~$ man ulimit
+The ulimit() call will get or set some limit for the  calling  process. 
+The cmd argument can have one of the following values.
+
+/opt/openarenaserver/

