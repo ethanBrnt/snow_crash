@@ -16,3 +16,16 @@ The ulimit() call will get or set some limit for the  calling  process.
 The cmd argument can have one of the following values.
 
 /opt/openarenaserver/
+
+nano test.sh
+
+#!/bin/bash
+
+whoami 
+getflag > /tmp/result
+
+chmod +x test.sh
+
+
+cat /tmp/result
+Check flag.Here is your token : viuaaale9huek52boumoomioc
