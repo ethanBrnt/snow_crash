@@ -59,3 +59,11 @@ a = 97 + 1 = 98 = b
 b = 98 + 2 = 100 = d
 
 token est peut etre le resultat de ./level09 en boucle si je poroduit un programme qui fait l'inverse...
+
+level09@SnowCrash:/tmp$ ./out "$(cat /home/user/level09/token)"
+f3iji1ju5yuevaus41q1afiuq
+level09@SnowCrash:/tmp$ su flag09
+Password:
+Don't forget to launch getflag !
+flag09@SnowCrash:~$ getflag
+Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
