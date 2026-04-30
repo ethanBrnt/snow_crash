@@ -1,1 +1,23 @@
 scp -P 4242 level10@192.168.1.42:/home/user/level10/level10 .
+
+nm level10
+...
+080486b0 t frame_dummy
+         U htons@@GLIBC_2.0      <<
+         U inet_addr@@GLIBC_2.0  <<
+080486d4 T main
+         U open@@GLIBC_2.0
+         U printf@@GLIBC_2.0
+         U puts@@GLIBC_2.0
+         U read@@GLIBC_2.0
+         U socket@@GLIBC_2.0
+0804a060 B stdout@@GLIBC_2.0
+         U strerror@@GLIBC_2.0
+         U write@@GLIBC_2.0
+level10@SnowCrash:~$
+
+
+➜  ressources git:(main) ./level10
+./level10 file host
+        sends file to host if you have access to it
+
