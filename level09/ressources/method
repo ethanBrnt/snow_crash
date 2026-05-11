@@ -46,10 +46,10 @@ level09@SnowCrash:~$ nm ./level09
 ...
 
 rotation de lettre
-level09@SnowCrash:~$ env -i ./level09 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+level09@SnowCrash:~$ ./level09 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 abcdefghijklmnopqrstuvwxyz{|}
 
-level09@SnowCrash:~$ env -i ./level09 aab
+level09@SnowCrash:~$ ./level09 aab
 abd
 
 chaque char = char_val + char_pos

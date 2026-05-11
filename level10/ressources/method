@@ -1,6 +1,6 @@
 scp -P 4242 level10@192.168.1.42:/home/user/level10/level10 .
 
-nm level10
+level10@SnowCrash:~$ nm level10
 ...
 080486b0 t frame_dummy
          U htons@@GLIBC_2.0      <<
